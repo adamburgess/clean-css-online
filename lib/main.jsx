@@ -40,7 +40,7 @@ var Container = React.createClass({
     },
     minify: function(e) {
         var text = e.target.value;
-        if(text.length > 25000) {
+        if(text.length > 50000) {
             //use ww
             ww.postMessage(text);
         } else {
@@ -51,4 +51,3 @@ var Container = React.createClass({
 })
 
 React.render(<Container />, document.getElementById('container'));
-
