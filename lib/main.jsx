@@ -3,8 +3,8 @@
 import React from 'react'
 import minify from './minify'
 
-var ww = new Worker('/worker.js');
-window.ww = ww;
+var ww = new Worker('worker.js');
+
 var Container = React.createClass({
     getInitialState: function() {
         return {
