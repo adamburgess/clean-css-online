@@ -27,8 +27,8 @@ var Stats = React.createClass({
 var Warnings = React.createClass({
   render: function() {
     var ws = this.props.warnings.map(w => <div key={w} className="warning">Warning: {w}</div>);
-    return this.props.warnings.length > 0 ? <div className="warnings">{ws}</div> : <span />;
-  } 
+    return this.props.warnings.length > 0 ? <div className="warnings">{ws}</div> : <span/>;
+  }
 })
 var Container = React.createClass({
     getInitialState: function() {
@@ -67,7 +67,6 @@ var Container = React.createClass({
             worker.postMessage(text);
         } else {
             var data = minify(text);
-            console.log(data);
             this.setState({ minified: data.styles, warnings: data.warnings, stats: data.stats });
         }
     }
