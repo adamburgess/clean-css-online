@@ -47,6 +47,12 @@ body {
 .output .stats {
     height: 18px;
     background-color: #eee;
-    padding-left: 10px;
+    padding-left: 0.5em;
     border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
+.output .warning {
+    padding-left: 0.5em;
+    background-color: #eea;
+    border-bottom: 1px solid darkgray;
 }
