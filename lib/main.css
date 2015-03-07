@@ -1,7 +1,33 @@
-.rendered {
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Bold.ttf);
+    font-weight: bold;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Montserrat, Helvetica, Arial;
+}
+
+.input {
+    float: left;
+    width: 45%;
+    height: 500px;
+    max-width: 45%;
+}
+.output {
+    float: left;
     font-family: consolas;
     font-size: 13px;
 
-    width: 800px;
-    height: 800px;
+    width: 55%;
+    height: 500px;
+}
+
+#header {
+    height: 40px;
+    width: 100%;
 }

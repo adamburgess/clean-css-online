@@ -9,6 +9,7 @@ import './highlight.js/foundation.css!'
 var highlight = hljs.highlight;
 
 import './main.css!'
+import mainCss from './main.css!text'
 
 var ww = new Worker('worker.js');
 
@@ -16,42 +17,14 @@ var Container = React.createClass({
     getInitialState: function() {
         return {
             minified: 'Start typing in the other box!',
-            error: false,
-            dv: `/*
-
-Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #000;
-  color: #f8f8f8;
-  -webkit-text-size-adjust: none;
-}
-
-.hljs-comment,
-.hljs-javadoc {
-  color: #aeaeae;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.ruby .hljs-function .hljs-keyword,
-.hljs-request,
-.hljs-status,
-.nginx .hljs-title {
-  color: #e28964;
-}`
+            error: false
         };
     },
     render: function() {
         var html = highlight('css', this.state.minified).value;
         return <div>
-            <textarea defaultValue={this.state.dv} onChange={this.minify} />
-            <div className="rendered hljs" dangerouslySetInnerHTML={{__html: html}} />
+            <textarea className="input" defaultValue={mainCss} onChange={this.minify} />
+            <div className="output hljs" dangerouslySetInnerHTML={{__html: html}} />
         </div>;
     },
     componentDidMount: function() {
@@ -61,7 +34,7 @@ Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
         }
         this.minify({
             target: {
-                value: this.state.dv
+                value: mainCss
             }
         });
     },

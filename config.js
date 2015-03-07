@@ -18,6 +18,7 @@ System.config({
     "highlight": "npm:highlight@0.2.3",
     "jsx": "github:floatdrop/plugin-jsx@1.0.1",
     "react": "npm:react@0.12.2",
+    "text": "github:systemjs/plugin-text@0.0.2",
     "github:floatdrop/plugin-jsx@1.0.1": {
       "react-tools": "npm:react-tools@0.12.2"
     },
