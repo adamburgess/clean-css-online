@@ -45,7 +45,6 @@ body {
     height: calc(100% - 18px);
 }
 .output .stats {
-    height: 18px;
     background-color: #eee;
     padding-left: 0.5em;
     border-top: 1px solid darkgray;
