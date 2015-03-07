@@ -1,0 +1,14 @@
+{
+  "jspm": {
+    "directories": {
+      "lib": ".",
+      "packages": "jspm_packages"
+    },
+    "dependencies": {
+      "browser-process-hrtime": "npm:browser-process-hrtime@^0.1.1",
+      "clean-css": "npm:clean-css@^3.1.5",
+      "jsx": "github:floatdrop/plugin-jsx@^1.0.1",
+      "react": "npm:react@^0.12.2"
+    }
+  }
+}
