@@ -2,7 +2,7 @@ clean-css online
 ---------------
 
 Built using jspm.
-Uses webworkers for files over 25kB.
+Uses webworkers for files over 25kb.
 
 To test locally:
 
@@ -14,7 +14,7 @@ jspm bundle-sfx lib/worker build-worker.js
 and then use your favorite local http server (e.g. npm:live-reload) to serve index-dev.html
 due to web workers being annoying, you'll have to re-build the bundle after changing anything that the worker uses.
 
-or, if you want to compile everything:
+or, if you want to compile everything to load fast:
 ````
 npm install -g jspm
 jspm install
