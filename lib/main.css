@@ -28,7 +28,7 @@ body {
 }
 .io {
     float: left;
-    height: 500px;
+    height: calc(100vh - 40px);
     font-family: consolas;
     font-size: 13px;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .output .hljs {
-    height: 482px;
+    height: calc(100% - 18px);
 }
 .output .stats {
     height: 18px;
