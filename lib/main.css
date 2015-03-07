@@ -1,3 +1,5 @@
+/* main.css */
+
 @font-face {
     font-family: Montserrat;
     src: url(../fonts/Montserrat-Bold.ttf);
@@ -12,21 +14,6 @@ body {
     font-family: Montserrat, Helvetica, Arial;
 }
 
-.input {
-    float: left;
-    width: 45%;
-    height: 500px;
-    max-width: 45%;
-}
-.output {
-    float: left;
-    font-family: consolas;
-    font-size: 13px;
-
-    width: 55%;
-    height: 500px;
-}
-
 #container #loading {
     padding-top: 200px;
     width: 200px;
@@ -38,4 +25,28 @@ body {
 #header {
     height: 40px;
     width: 100%;
+}
+.io {
+    float: left;
+    height: 500px;
+    font-family: consolas;
+    font-size: 13px;
+}
+.input {
+    width: 45%;
+    max-width: 45%;
+}
+.output {
+    width: 55%;
+    position: relative;
+}
+
+.output .hljs {
+    height: 482px;
+}
+.output .stats {
+    height: 18px;
+    background-color: #eee;
+    padding-left: 10px;
+    border-top: 1px solid darkgray;
 }

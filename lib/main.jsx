@@ -1,5 +1,3 @@
-//maybe adding react for something this simple is an overkill
-
 import React from 'react'
 import minify from './minify'
 
@@ -17,20 +15,31 @@ var Container = React.createClass({
     getInitialState: function() {
         return {
             minified: 'Start typing in the other box!',
-            error: false
+            warnings: [],
+            stats: {}
         };
     },
     render: function() {
         var html = highlight('css', this.state.minified).value;
+        var stats = this.state.stats;
+        var generatedStr = stats.timeSpent < 2 ? ' Generated instantly.' : ` Generated in ${stats.timeSpent / 1000} seconds.`;
         return <div>
-            <textarea className="input" defaultValue={mainCss} onChange={this.minify} />
-            <div className="output hljs" dangerouslySetInnerHTML={{__html: html}} />
+            <textarea className="input io" defaultValue={mainCss} onChange={this.minify} />
+            <div className="output io">
+              <div className="hljs" dangerouslySetInnerHTML={{__html: html}} />
+              <div className="stats">
+                Source: {stats.originalSize} characters.
+                Minified: {stats.minifiedSize} characters.
+                Saved {Math.round(stats.efficiency * 10000) / 100}%.
+                {generatedStr}
+              </div>
+            </div>
         </div>;
     },
     componentDidMount: function() {
         ww.onmessage = e => {
-            console.log(e);
-            this.setState({ minified: e.data.styles, error: false });
+            var data = e.data;
+            this.setState({ minified: data.styles, warnings: data.warnings, stats: data.stats });
         }
         this.minify({
             target: {
@@ -44,8 +53,9 @@ var Container = React.createClass({
             //use ww
             ww.postMessage(text);
         } else {
-            var data = minify(text)
-            this.setState({ minified: data.styles, error: false });
+            var data = minify(text);
+            console.log(data);
+            this.setState({ minified: data.styles, warnings: data.warnings, stats: data.stats });
         }
     }
 })

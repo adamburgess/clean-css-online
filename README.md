@@ -2,7 +2,7 @@ clean-css online
 ---------------
 
 Built using jspm.
-Uses webworkers for files over 25kb.
+Uses webworkers for files over 50kb.
 
 To test locally:
 
