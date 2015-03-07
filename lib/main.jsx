@@ -1,3 +1,5 @@
+//maybe adding react for something this simple is an overkill
+
 import React from 'react'
 import minify from './minify'
 
