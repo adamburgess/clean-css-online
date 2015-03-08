@@ -17,6 +17,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.6",
     "highlight": "npm:highlight@0.2.3",
     "jsx": "github:floatdrop/plugin-jsx@1.0.1",
+    "process": "npm:process@0.10.1",
     "react": "npm:react@0.12.2",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:floatdrop/plugin-jsx@1.0.1": {
