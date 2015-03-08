@@ -1,3 +1,4 @@
 importScripts('jspm_packages/babel-polyfill.js')
+//this is a hack.
 window = { XMLHttpRequest: {} }
-importScripts('build-worker.js')
+importScripts('bin/build-worker.js')
