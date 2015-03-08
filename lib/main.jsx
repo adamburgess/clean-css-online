@@ -14,7 +14,7 @@ var worker = new Worker('worker.js');
 var Stats = React.createClass({
   render: function() {
     var stats = this.props.stats;
-    var generatedStr = stats.timeSpent < 2 ? ' Generated instantly.' : ` Generated in ${stats.timeSpent / 1000} seconds.`;
+    var generatedStr = stats.timeSpent < 2 ? ' Minified instantly.' : ` Minified in ${stats.timeSpent / 1000} seconds.`;
     return <div className="stats">
       Source: {stats.originalSize} characters.
       Minified: {stats.minifiedSize} characters.
