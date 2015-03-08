@@ -41,7 +41,7 @@ var Container = React.createClass({
     render: function() {
         var html = highlight('css', this.state.minified).value;
         return <div>
-            <textarea className="input io" defaultValue={mainCss} onChange={this.minify} />
+            <textarea className="input io" defaultValue={mainCss} onChange={this.minify} spellCheck="false" />
             <div className="output io">
               <Stats stats={this.state.stats} />
               <Warnings warnings={this.state.warnings} />
