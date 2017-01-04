@@ -1,17 +1,21 @@
 {
-  "jspm": {
-    "directories": {
-      "lib": ".",
-      "packages": "jspm_packages"
-    },
-    "dependencies": {
-      "browser-process-hrtime": "npm:browser-process-hrtime@^0.1.1",
-      "clean-css": "npm:clean-css@^3.1.5",
-      "css": "github:systemjs/plugin-css@^0.1.6",
-      "jsx": "github:floatdrop/plugin-jsx@^1.0.1",
-      "process": "npm:process@^0.10.1",
-      "react": "npm:react@^0.12.2",
-      "text": "github:systemjs/plugin-text@^0.0.2"
-    }
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.1.4",
+    "babel-preset-preact": "git+https://github.com/adamburgess/babel-preset-preact.git",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.0-rc.3"
+  },
+  "dependencies": {
+    "browser-process-hrtime": "^0.1.2",
+    "clean-css": "^3.4.23",
+    "highlight.js": "^9.9.0",
+    "preact": "^7.1.0"
   }
 }
