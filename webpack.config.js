@@ -13,8 +13,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.css$/, loader: ExtractTextPlugin.extract({
-                fallbackLoader: "style-loader",
-                loader: "css-loader"
+                loader: "css-loader!clean-css-loader"
             }) },
             {
                 test: /.js?$/,
