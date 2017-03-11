@@ -7,8 +7,8 @@ module.exports = {
         'build-worker': './lib/worker.js'
     },
     output: {
-            path: __dirname,
-            filename: "./bin/[name].js"
+        path: __dirname,
+        filename: "./bin/[name].js"
     },
     module: {
         loaders: [
