@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
@@ -11,23 +11,28 @@ module.exports = {
         filename: "./bin/[name].js"
     },
     module: {
-        loaders: [
-            { test: /\.css$/, loader: ExtractTextPlugin.extract({
-                loader: "css-loader!clean-css-loader"
-            }) },
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'clean-css-loader'
+                ]
+            },
             {
                 test: /.js?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
                     presets: [
-                        ['env', {
+                        ['@babel/env', {
                             'targets': {
                                 'browsers': ['last 5 versions']
                             },
                             'modules': false,
                         }],
-                        'react'
+                        '@babel/preset-react'
                     ]
                 }
             }
@@ -39,17 +44,13 @@ module.exports = {
                 NODE_ENV: '"production"'
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
-        }),
-        new ExtractTextPlugin('./bin/build.css')
+        new MiniCssExtractPlugin({
+            filename: './bin/[name].css',  
+        })
     ],
+    optimization: {
+        minimize: true
+    },
     devtool: '#source-map',
     node: {
         fs: "empty"

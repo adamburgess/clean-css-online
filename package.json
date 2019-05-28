@@ -1,20 +1,21 @@
 {
   "private": true,
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.4.0",
-    "babel-preset-env": "^1.2.1",
-    "babel-preset-react": "^6.23.0",
-    "clean-css-loader": "^0.0.4",
-    "css-loader": "^0.27.1",
-    "extract-text-webpack-plugin": "^2.0.0-beta.4",
-    "raw-loader": "^0.5.1",
-    "webpack": "beta"
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "clean-css-loader": "^2.0.0",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.7.0",
+    "raw-loader": "^2.0.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
   },
   "dependencies": {
-    "browser-process-hrtime": "^0.1.2",
-    "clean-css": "^4.0.8",
-    "highlight.js": "^9.10.0",
-    "preact": "^7.2.0"
+    "browser-process-hrtime": "^1.0.0",
+    "clean-css": "^4.2.1",
+    "highlight.js": "^9.15.6",
+    "preact": "^8.4.2"
   }
 }
