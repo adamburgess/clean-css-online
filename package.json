@@ -15,7 +15,7 @@
   "dependencies": {
     "browser-process-hrtime": "^1.0.0",
     "clean-css": "^4.2.1",
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^9.16.2",
     "preact": "^8.4.2"
   }
 }
