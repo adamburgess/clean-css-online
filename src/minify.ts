@@ -7,17 +7,17 @@ import hljsCss from 'highlight.js/lib/languages/css.js'
 hljs.registerLanguage('css', hljsCss);
 
 // hack
-if(!process) process = {};
-process.hrtime = hrtime;
+if(typeof process === 'undefined') window.process = {} as unknown as NodeJS.Process;
+process.hrtime = hrtime as NodeJS.HRTime;
 
-var cleanCss = new CleanCSS({
+const cleanCss = new CleanCSS({
     inline: false, // don't inline @imports
     rebase: false, // don't modify urls
     level: 2, // enable all optimisations
 });
 
-export default function(data) {
-    var minified = cleanCss.minify(data);
+export function minify(data: string) {
+    let minified = cleanCss.minify(data) as CleanCSS.Output & { highlighted: hljs.IHighlightResult };
     minified.highlighted = hljs.highlight('css', minified.styles);
     return minified;
 }

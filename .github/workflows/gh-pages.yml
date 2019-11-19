@@ -1,0 +1,35 @@
+name: gh-pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: build
+        run: yarn && yarn build
+      - name: configure ssh/git
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh &&
+          echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519 &&
+          printf "Host github.com\nHostname github.com\nIdentityFile ~/.ssh/id_ed25519\n" > ~/.ssh/config &&
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          chmod -R 700 ~/.ssh &&
+          git config --global user.email "automated@adam.id.au" &&
+          git config --global user.name "automated adam"
+      - name: pull gh-pages
+        run: git clone --branch gh-pages git@github.com:$GITHUB_REPOSITORY ~/gh-pages
+      - name: copy edited files
+        run: rsync --delete -avh --exclude=.git ./dist/ ~/gh-pages/
+      - name: commit
+        run: |
+          export MSG=$(git log -n 1 --pretty=format:%s $GITHUB_SHA) &&
+          cd ~/gh-pages &&
+          git add -A &&
+          git commit -m "$MSG" && 
+          git push

@@ -1,21 +1,27 @@
 {
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "clean-css-loader": "^2.0.0",
-    "css-loader": "^2.1.1",
-    "mini-css-extract-plugin": "^0.7.0",
-    "raw-loader": "^2.0.0",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2"
+    "@types/clean-css": "^4.2.1",
+    "@types/highlight.js": "^9.12.3",
+    "rollup": "^1.27.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-hypothetical": "^2.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.25.2",
+    "typescript": "^3.7.2"
   },
   "dependencies": {
     "browser-process-hrtime": "^1.0.0",
     "clean-css": "^4.2.1",
-    "highlight.js": "^9.15.6",
-    "preact": "^8.4.2"
+    "highlight.js": "^9.16.2",
+    "preact": "^10.0.5",
+    "rollup-plugin-virtual": "^1.0.1"
+  },
+  "scripts": {
+    "build": "rollup -c"
   }
 }
