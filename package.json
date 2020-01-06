@@ -6,7 +6,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "clean-css-loader": "^2.0.0",
-    "css-loader": "^2.1.1",
+    "css-loader": "^3.4.1",
     "mini-css-extract-plugin": "^0.7.0",
     "raw-loader": "^2.0.0",
     "webpack": "^4.32.2",
