@@ -2,7 +2,8 @@ import hrtime from 'browser-process-hrtime'
 
 import CleanCSS from 'clean-css'
 
-import hljs from 'highlight.js/lib/highlight.js'
+import 'highlight.js'
+import hljs from 'highlight.js/lib/core.js'
 import hljsCss from 'highlight.js/lib/languages/css.js'
 hljs.registerLanguage('css', hljsCss);
 
@@ -17,7 +18,7 @@ const cleanCss = new CleanCSS({
 });
 
 export function minify(data: string) {
-    let minified = cleanCss.minify(data) as CleanCSS.Output & { highlighted: hljs.IHighlightResult };
+    let minified = cleanCss.minify(data) as CleanCSS.Output & { highlighted: HighlightResult };
     minified.highlighted = hljs.highlight('css', minified.styles);
     return minified;
 }

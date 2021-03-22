@@ -43,7 +43,7 @@ class Warnings extends Component<WarningsProps> {
 function constructWorker(filename: string) {
     try {
         if (typeof Worker !== 'undefined') {
-            return new Worker('./bin/build-worker.js');
+            return new Worker('./build-worker.js');
         }
     } catch (e) {
         console.error(e);

@@ -2,22 +2,22 @@
   "private": true,
   "devDependencies": {
     "@types/clean-css": "^4.2.1",
-    "@types/highlight.js": "^9.12.3",
-    "rollup": "^1.27.2",
+    "esbuild": "^0.9.3",
+    "postcss": "^8.2.8",
+    "rollup": "^2.41.5",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-esbuild": "^3.0.2",
     "rollup-plugin-hypothetical": "^2.1.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-terser": "^5.1.2",
-    "rollup-plugin-typescript2": "^0.25.2",
-    "typescript": "^3.7.2"
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
     "browser-process-hrtime": "^1.0.0",
     "clean-css": "^4.2.1",
-    "highlight.js": "^9.16.2",
+    "highlight.js": "^10.6.0",
     "preact": "^10.0.5",
     "rollup-plugin-virtual": "^1.0.1"
   },

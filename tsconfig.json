@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "lib": [
             "dom",
             "dom.iterable",
@@ -18,13 +18,9 @@
         "resolveJsonModule": true,
         "sourceMap": true,
         "jsx": "react",
-        "jsxFactory": "h",
-        "typeRoots": [
-            "node_modules/@types",
-            "types"
-        ]
+        "jsxFactory": "h"
     },
     "include": [
-        "src", "types/types.d.ts"
+        "src"
     ]
 }
